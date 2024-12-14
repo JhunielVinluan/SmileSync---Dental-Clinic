@@ -1,0 +1,72 @@
+.appointment table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appointment thead {
+  background-color: #457dd8;
+  color: white;
+}
+
+.appointment thead,
+.appointment tr,
+.appointment th {
+  text-align: center;
+  padding: 1em;
+}
+.appointment td {
+  border: 1px solid rgb(173, 172, 172);
+}
+
+.appointment td {
+  resize: both;
+  overflow: auto;
+  max-width: 400px;
+  min-width: 150px;
+  min-height: 50px;
+  max-height: 100px;
+  padding: 0;
+  margin: 0;
+}
+.appointment td::-webkit-scrollbar {
+  width: 0;
+}
+
+.appointment .time {
+  resize: none;
+}
+.time {
+  resize: none;
+  overflow: hidden;
+}
+.none {
+  resize: none;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.Special,
+.Active {
+  background-color: #a0bdf0;
+}
+.Pending {
+  background-color: yellow;
+}
+.noShow {
+  background-color: orange;
+}
+.Confirmation,
+.Confirmed {
+  background-color: green;
+}
+.Cancel {
+  background-color: red;
+}
+.Complete {
+  background-color: #a0f0a0;
+}
+
+.appointment-select label {
+  margin-bottom: 20px;
+  display: block;
+}

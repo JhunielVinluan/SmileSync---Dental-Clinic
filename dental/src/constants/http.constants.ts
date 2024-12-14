@@ -1,0 +1,15 @@
+export enum HTTP_METHOD {
+  POST = 'POST',
+  GET = 'GET',
+  PUT = 'PUT',
+  PATCH = 'PATCH',
+  DELETE = 'DELETE',
+}
+
+export enum HTTP_STATUS {
+  SUCCESS = 200,
+  NO_CONTENT = 204,
+  BAD_REQUEST = 400,
+  UNAUTHORIZED = 401,
+  SERVER_ERROR = 500,
+}

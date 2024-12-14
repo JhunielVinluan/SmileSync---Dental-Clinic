@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="section__container nav__container">
+            <div class="nav__logo">
+                <img src="assets/logo (2).png" alt="logo" /> SMILE
+                <span>SYNC</span>
+            </div>
+            <ul class="nav__links">
+                <li class="link"><a href="#home">Home</a></li>
+                <li class="link"><a href="#service">Services</a></li>
+                <li class="link"><a href="#about">About Us</a></li>
+                <li class="link"><a href="#dentist">Dentist</a></li>
+                <li class="link"><a href="#surgical">Surgical Equipment</a></li>
+            </ul>
+            <button id="loginBtn" class="btn">Log In</button>
+        </nav>
+        <div class="section__container header__container" id="home">
+            <div class="header__content">
+                <h1>We Are Ready To <br />Help & Take Care <br />Of Your Dental Health</h1>
+                <p>
+                    Your smile is important to us. Let us provide you with the best dental care available! We are dedicated to giving you personalized care and making sure your visit is as comfortable as possible.Our professional staff will ensure your experience exceeds
+                    expectations.
+                </p>
+                <button href="#service" class="btn" id="serviceBtn">See Services</button>
+            </div>
+            <div class="header__image">
+                <img src="assets/dentist.png" alt="Dental Care" />
+            </div>
+        </div>
+    </header>
+    <!-- Login Popup -->
+    <div id="loginPopup" class="header__form" style="display: none;">
+        <form>
+            <h4>Book Now</h4>
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
+            <input type="text" placeholder="Address" />
+            <input type="text" placeholder="Phone No." />
+            <button class="btn form__btn">Book Appointment</button>
+            <button type="button" class="btn close__btn" id="closePopupBtn">Close</button>
+        </form>
+    </div>
+
+    <section class="section__container service__container" id="service">
+        <div class="service__header">
+            <div class="service__header__content">
+                <h2 class="section__header">Our Services</h2>
+                <p>
+                    At Ramos Vallao-Dental Clinic, we offer a wide range of services to keep your smile healthy and beautiful.
+                </p>
+            </div>
+            <button class="service__btn" id="askServiceBtn">Ask A Service</button>
+        </div>
+        <div class="service__grid">
+            <div class="service__card">
+                <span><i class="ri-tooth-line"></i><i class="ri-brush-line"></i></span>
+                <h4>Teeth Whitening</h4>
+                <p>
+                    Achieve a brighter, whiter smile with our safe and effective professional teeth whitening treatments.
+                </p>
+                <a href="https://www.webmd.com/oral-health/teeth-whitening-and-bleaching" target="_blank">Learn More</a>
+            </div>
+            <div class="service__card">
+                <span><i class="ri-tooth-fill"></i><i class="ri-hammer-line"></i></span>
+                <h4>Dental Filling</h4>
+                <p>
+                    Repair cavities and restore damaged teeth with durable, natural-looking fillings.
+                </p>
+                <a href="https://my.clevelandclinic.org/health/treatments/17002-dental-fillings">Learn More</a>
+            </div>
+            <div class="service__card">
+                <span><i class="ri-tooth-fill"></i><i class="ri-shield-fill"></i></span>
+                <h4>Dental Crown</h4>
+                <p>
+                    Protect and restore damaged or weakened teeth with crowns made from a variety of materials to meet your individual needs.
+                </p>
+                <a href="https://elevatedental.ph/service/dental-crowns/">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>You need to log in to your account to ask for a service.</p>
+        </div>
+    </div>
+
+    <!-- CSS -->
+    <style>
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        const askServiceBtn = document.getElementById('askServiceBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeBtn = document.querySelector('.close');
+
+        askServiceBtn.addEventListener('click', () => {
+            loginModal.style.display = 'block'; // Show the modal
+        });
+
+        closeBtn.addEventListener('click', () => {
+            loginModal.style.display = 'none'; // Hide the modal
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === loginModal) {
+                loginModal.style.display = 'none'; // Hide the modal if user clicks outside
+            }
+        });
+    </script>
+
+
+    <section class="section__container about__container" id="about">
+        <div class="about__content">
+            <h2 class="section__header">About Ramos Vallao Dental Clinic</h2>
+            <p>
+                At Ramos Vallao-Dental Clinic, we believe that a healthy smile is essential for overall well-being. That's why we're dedicated to providing exceptional dental care in a warm and welcoming environment. Our clinic, established in 2003, has been serving
+                the community with a commitment to personalized care and a hands-on approach. We understand that visiting the dentist can be stressful for some, so we strive to create a comfortable and relaxing atmosphere where you can feel at ease.
+            </p>
+            <p>
+                Our team of skilled professionals, led by Dr. Siyo R. Vallao, brings years of expertise and a genuine passion for helping patients achieve healthy and beautiful smiles. Dr. Vallao, with over 22 years of experience, believes in treating each individual
+                with respect and understanding, taking the time to address your unique needs and concerns.
+            </p>
+            <p>
+                We're committed to providing personalized care that addresses your specific goals and preferences. While we may not have the latest high-tech equipment, we believe in the power of traditional methods and a personalized touch. We utilize tried-and-true
+                techniques and tools, ensuring you receive the most effective and comfortable treatment. Our focus is on providing quality care with a personal touch, ensuring your satisfaction and a positive experience.
+            </p>
+        </div>
+        <div class="about__image">
+            <img src="assets/picture.png" alt="about" />
+        </div>
+    </section>
+    <section class="section__container why__container" id="dentist">
+        <div class="dentist__content">
+            <div class="doctors__card">
+                <div class="doctors__card__image">
+                    <img src="assets/dmd.jpg" alt="doctor" />
+                    <div class="doctors__socials">
+                        <a href="https://www.instagram.com/vallao_ddm.italya?igsh=aW9pNTMxaXNodGtv" target="_blank">
+                            <span><i class="ri-instagram-line"></i></span>
+                        </a>
+                        <a href="https://www.facebook.com/ronald.vallao?mibextid=ZbWKw" target="_blank">
+                            <span><i class="ri-facebook-fill"></i></span>
+                        </a>
+                        <span class="heart-icon">
+                            <i class="ri-heart-fill"></i>
+                        </span>
+                    </div>
+                </div>
+                <h4>Dr. Siyo R. Vallao</h4>
+                <p>Gen Dentistry and Orthodontist</p>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script>
+            // Select the heart icon
+            document.querySelector('.heart-icon').addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        </script>
+
+        <!-- CSS -->
+        <style>
+            .heart-icon {
+                cursor: pointer;
+                color: gray;
+                /* Default color */
+                transition: color 0.3s ease, transform 0.2s ease;
+            }
+            
+            .heart-icon.active {
+                color: red;
+                /* Change color when active */
+                transform: scale(1.2);
+                /* Slightly enlarge the icon */
+            }
+        </style>
+
+        </div>
+        <div class="why__content">
+            <h2 class="section__header">Why Choose Us</h2>
+            <p>
+                We're dedicated to making your dental experience as comfortable and positive as possible. Our friendly team is here to provide you with the best possible care in a welcoming environment.
+            </p>
+            <div class="why__grid">
+                <span><i class="ri-hand-heart-line"></i></span>
+                <div>
+                    <h4>Experience and Conpassionate Care</h4>
+                    <p>
+                        Our team of skilled professionals, led by Dr. Siyo R. Vallao, brings years of expertise and a genuine passion for helping patients achieve healthy and beautiful smiles.
+                    </p>
+                </div>
+                <span><i class="ri-truck-line"></i></span>
+                <div>
+                    <h4>Personalize Care in a Welcoming Environment</h4>
+                    <p>
+                        We strive to create a comfortable and relaxing atmosphere where you can feel at ease. Our team is friendly and dedicated to providing you with the best possible experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section__container doctors__container" id="surgical">
+        <div class="doctors__header">
+            <div class="doctors__header__content">
+                <h2 class="section__header">Surgical Equipment</h2>
+                <p>
+                    We're committed to providing you with the highest quality care, and that includes using the latest technology. Our surgical equipment is designed to make your treatment more precise, efficient, and comfortable.
+                </p>
+            </div>
+            <div class="doctors__nav">
+                <span><i class="ri-arrow-left-line"></i></span>
+                <span><i class="ri-arrow-right-line"></i></span>
+            </div>
+        </div>
+        <div class="doctors__grid">
+            <div class="doctors__card">
+                <div class="doctors__card__content">
+                    <h4>Precision Scalpels</h4>
+                    <p>
+                        Advanced surgical blades ensuring utmost precision during operations.
+                    </p>
+                </div>
+            </div>
+            <div class="doctors__card">
+                <div class="doctors__card__content">
+                    <h4>Robotic Assistance</h4>
+                    <p>
+                        Cutting-edge robotic systems for minimally invasive surgeries.
+                    </p>
+                </div>
+            </div>
+            <div class="doctors__card">
+                <div class="doctors__card__content">
+                    <h4>State-of-the-Art Monitoring</h4>
+                    <p>
+                        High-tech monitoring equipment for patient safety and effective outcomes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <h3>SMILE<span>SYNC</span></h3>
+                <p>
+                    We're excited to partner with you on your journey to a healthier smile. With Smilesync, we can work together to create a personalized plan that meets your unique needs, making sure you feel comfortable and confident every step of the way.
+                </p>
+                <p>
+                    Trust us to care for your smile with Smilesync, a system that connects all aspects of your dental care for a seamless and personalized experience
+                </p>
+                <p>
+                    Let's work together to achieve a smile you'll love! Smilesync helps us provide personalized support and guidance throughout your dental journey.
+                </p>
+            </div>
+            <div class="footer__col">
+                <h4>About Ramos Vallao Dental Clinic</h4>
+                <p>Home</p>
+                <p>About Ramos Vallao Dental Clinic</p>
+                <p>Work With Us</p>
+                <p>Dentist</p>
+                <p>Terms & Conditions</p>
+            </div>
+            <div class="footer__col">
+                <h4>Other Services</h4>
+                <p>Consultation</p>
+                <p>Root Canals</p>
+                <p>Dental Dentures</p>
+                <p>Dental Implants</p>
+                <p>Tooth Extraction</p>
+            </div>
+            <div class="footer__col">
+                <h4>Other way to Contact Us</h4>
+                <p>
+                    <i class="ri-map-pin-2-fill"></i> Salincaoet, Poblacion, Bugallon, Pangasinan
+                </p>
+                <p><i class="ri-mail-fill"></i> support@smilesyncdentalclinic.com</p>
+                <p><i class="ri-phone-fill"></i> +639-672-108-943</p>
+                <p><i class="ri-phone-fill"></i> +639-608-173-666</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <div class="footer__bar__content">
+                <p>Copyright © 2024 SMILESYNC: AT Ramos Vallao Dental Clinic. All rights reserved.</p>
+                <div class="footer__socials">
+                    <a href="https://www.instagram.com/vallao_ddm.italya?igsh=aW9pNTMxaXNodGtv" target="_blank">
+                        <span><i class="ri-instagram-line"></i></span>
+                    </a>
+                    <a href="https://www.facebook.com/ronald.vallao?mibextid=ZbWKw" target="_blank">
+                        <span><i class="ri-facebook-fill"></i></span>
+                    </a>
+                    <span class="heart-icon">
+                        <i class="ri-heart-fill"></i>
+                    </span>
+                </div>
+
+                <!-- JavaScript for the heart icon -->
+                <script>
+                    document.querySelector('.heart-icon').addEventListener('click', function() {
+                        this.classList.toggle('active');
+                    });
+                </script>
+
+                <!-- CSS -->
+                <style>
+                    .footer__socials a {
+                        text-decoration: none;
+                        /* Remove underline */
+                        color: inherit;
+                        /* Inherit the icon color */
+                        margin-right: 10px;
+                        /* Space between icons */
+                    }
+                    
+                    .heart-icon {
+                        cursor: pointer;
+                        color: gray;
+                        transition: color 0.3s ease, transform 0.2s ease;
+                    }
+                    
+                    .heart-icon.active {
+                        color: red;
+                        transform: scale(1.2);
+                    }
+                </style>
+
+            </div>
+        </div>
+    </footer>
+    <!-- Popup JavaScript -->
+    <script>
+        // JavaScript for toggling the popup
+        const loginBtn = document.getElementById("loginBtn");
+        const loginPopup = document.getElementById("loginPopup");
+        const closePopupBtn = document.getElementById("closePopupBtn");
+
+        // Show popup
+        loginBtn.addEventListener("click", () => {
+            loginPopup.style.display = "block";
+        });
+
+        // Hide popup
+        closePopupBtn.addEventListener("click", () => {
+            loginPopup.style.display = "none";
+        });
+    </script>
+
+    <script>
+        document.getElementById("serviceBtn").addEventListener("click", function(event) {
+            event.preventDefault();
+            const target = document.getElementById("service");
+            target.scrollIntoView({
+                behavior: "smooth",
+            });
+        });
+    </script>
+</body>
+
+</html>
